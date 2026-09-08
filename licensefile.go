@@ -150,6 +150,18 @@ func split(token string) (signed []byte, claims Claims, sig []byte, err error) {
 // the machine binding is skipped, but a file issued to a specific machine will
 // then be accepted anywhere, so pass one whenever you can.
 func (c Claims) Check(now time.Time, fingerprint string) error {
+	// An expired status is an expiry, not a generic refusal.
+	//
+	// The server derives the status when it signs a file, so once the date has
+	// passed it sends "expired" rather than "active" with a stale date.
+	// Checking the status first therefore made ErrExpired unreachable in
+	// practice: every genuinely expired licence reported ErrNotActive, whose
+	// honest phrasing is "suspended or revoked". That sends a customer who
+	// simply needs to renew to their vendor's support desk instead of to
+	// checkout, and it is the one message a licensing system most wants right.
+	if c.Status == StatusExpired {
+		return ErrExpired
+	}
 	if c.Status != StatusActive {
 		return fmt.Errorf("%w: %s", ErrNotActive, c.Status)
 	}

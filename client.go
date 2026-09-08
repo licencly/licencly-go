@@ -32,7 +32,7 @@ import (
 
 // Version of this SDK, sent in the user agent so a vendor's traffic is
 // identifiable when they ask for support.
-const Version = "1.0.0"
+const Version = "1.0.1"
 
 const (
 	defaultBaseURL = "https://licencly.com"

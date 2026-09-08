@@ -94,21 +94,21 @@
       "maintenance_active": false
     },
     {
-      "name": "not_active_expired",
-      "description": "Status is expired, so the file is a signed refusal.",
+      "name": "expired_by_status",
+      "description": "Status is expired, which is how the server reports a licence past its date.",
       "file": "lcl1.eyJ2IjoxLCJraWQiOiIxMTExMTExMS0xMTExLTExMTEtMTExMS0xMTExMTExMTExMTEiLCJsaWMiOiIyMjIyMjIyMi0yMjIyLTIyMjItMjIyMi0yMjIyMjIyMjIyMjIiLCJrZXkiOiJIOEsyV00tM1BRUjdULTlYWkI0Ti1DRDZGR0giLCJwcmQiOiIzMzMzMzMzMy0zMzMzLTMzMzMtMzMzMy0zMzMzMzMzMzMzMzMiLCJzdWIiOiJjdXN0b21lci00NDcxIiwic3QiOiJleHBpcmVkIiwic2VhdHMiOjUsInVzZWQiOjIsImZwIjoibWFjaGluZS1hYmMiLCJpYXQiOjE3ODAyMjg4MDAsImV4cCI6MCwibW50IjowLCJyZXYiOjE3ODA4MzM2MDAsImdyYWNlIjo2MDQ4MDAsIm1ldGEiOnsidGllciI6InBybyJ9fQ.xtl6xhbO5OVn1Bp8VYZKXObLuSHwrzeV4XyIu-7pnZvnZjTS7RUbZ-a0xlyePSYn3p66gmLH3IfWzbmAsu9eCA",
       "public_keys": {
         "11111111-1111-1111-1111-111111111111": "VMvmUPSDSFG5WLwlhHrMUJ5ywzUFATuunfhajKBy1V8="
       },
       "fingerprint": "machine-abc",
       "now": 1780315200,
-      "expect": "not_active",
+      "expect": "expired",
       "needs_revalidation": false,
       "maintenance_active": false
     },
     {
-      "name": "expired",
-      "description": "exp is in the past.",
+      "name": "expired_by_date",
+      "description": "exp is in the past, which a client sees first if its clock runs ahead of ours.",
       "file": "lcl1.eyJ2IjoxLCJraWQiOiIxMTExMTExMS0xMTExLTExMTEtMTExMS0xMTExMTExMTExMTEiLCJsaWMiOiIyMjIyMjIyMi0yMjIyLTIyMjItMjIyMi0yMjIyMjIyMjIyMjIiLCJrZXkiOiJIOEsyV00tM1BRUjdULTlYWkI0Ti1DRDZGR0giLCJwcmQiOiIzMzMzMzMzMy0zMzMzLTMzMzMtMzMzMy0zMzMzMzMzMzMzMzMiLCJzdWIiOiJjdXN0b21lci00NDcxIiwic3QiOiJhY3RpdmUiLCJzZWF0cyI6NSwidXNlZCI6MiwiZnAiOiJtYWNoaW5lLWFiYyIsImlhdCI6MTc4MDIyODgwMCwiZXhwIjoxNzgwMzExNjAwLCJtbnQiOjAsInJldiI6MTc4MDgzMzYwMCwiZ3JhY2UiOjYwNDgwMCwibWV0YSI6eyJ0aWVyIjoicHJvIn19.vXpUNtnPz-Ct9SRxx19q6yY6WYSOwhQzDdLM-CWz1tv0Fwzb4g7j3jJ7T2OXLprnw-HltVoneIAiAf6SUsqfCg",
       "public_keys": {
         "11111111-1111-1111-1111-111111111111": "VMvmUPSDSFG5WLwlhHrMUJ5ywzUFATuunfhajKBy1V8="
