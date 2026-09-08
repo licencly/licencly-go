@@ -55,5 +55,13 @@ jobs:
       # dependency here is their problem before it is ours.
       - name: govulncheck
         run: |
-          go install golang.org/x/vuln/cmd/govulncheck@latest
+          # Pinned, not @latest.
+          #
+          # govulncheck v1.8.0 requires Go 1.26 and this job runs 1.25 with
+          # GOTOOLCHAIN=local, so @latest broke the build one morning with no
+          # change on our side. A security scanner that silently follows
+          # upstream is a scanner that stops the deploy for reasons unrelated to
+          # our code. v1.7.0 is the newest release that still builds on 1.25;
+          # raise both together when the toolchain moves.
+          go install golang.org/x/vuln/cmd/govulncheck@v1.7.0
           govulncheck ./...
